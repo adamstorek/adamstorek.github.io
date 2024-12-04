@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adam Štorek - Academic Profile</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Load the core Lucide library first -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
-    <!-- Load specific icons we need -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide-static.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         * {
             margin: 0;
@@ -326,6 +323,29 @@
             left: -1.25rem;
             color: #4b5563;
         }
+
+        .contact-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .contact-links a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .contact-links a:hover {
+            color: #4b5563;
+        }
+
+        .contact-links .icon {
+            width: 1.2em;
+            height: 1.2em;
+        }
     </style>
 </head>
 <body>
@@ -333,16 +353,25 @@
         <img src="assets/img/profile.jpg" alt="Adam Štorek" class="profile-img">
         <div class="header-content">
             <h1>Adam Štorek</h1>
-            <p class="title">PhD Student in Computer Science</p>
+            <p class="title">PhD Student in Computer Science at Columbia University</p>
             <p>
-            My research interests lie at the intersection of software security, program analysis, and natural
-            language processing. My recent work focuses on adversarial attacks against coding assistants and
-            model alignment for secure code generation.
+            I am a second-year PhD student advised by <a href="https://sumanj.info" target="_blank">Professor Suman Jana</a>. My research interests lie at the intersection of software security, program analysis, and natural language processing. My recent work focuses on adversarial attacks against coding assistants and model alignment for secure code generation.
             </p>
-            <p class="contact">
-                <i data-lucide="mail" class="icon"></i>
-                <a href="mailto:astorek@cs.columbia.edu">astorek@cs.columbia.edu</a>
-            </p>
+
+            <div class="contact-links">
+                <a href="mailto:astorek@cs.columbia.edu">
+                  <i data-lucide="mail" class="icon"></i>
+                  <span>astorek@cs.columbia.edu</span>
+                </a>
+                <a href="https://github.com/adamstorek">
+                  <i data-lucide="github" class="icon"></i>
+                  <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com/in/adam-storek">
+                  <i data-lucide="linkedin" class="icon"></i>
+                  <span>LinkedIn</span>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -364,7 +393,7 @@
                     <div class="degree-details">Advised by Professor Suman Jana</div>
                     <div class="location">New York, NY</div>
                 </div>
-                <div class="experience-date">Expected Dec 2027</div>
+                <div class="experience-date">Expected December 2027</div>
             </div>
 
             <div class="education-item">
@@ -376,7 +405,7 @@
                     <div class="degree-details">Security track</div>
                     <div class="location">New York, NY</div>
                 </div>
-                <div class="experience-date">Dec 2022</div>
+                <div class="experience-date">December 2022</div>
             </div>
 
             <div class="education-item">
@@ -388,7 +417,7 @@
                     <div class="degree-details">Intelligent Systems track, Magna Cum Laude, Phi Beta Kappa</div>
                     <div class="location">New York, NY</div>
                 </div>
-                <div class="experience-date">Dec 2021</div>
+                <div class="experience-date">December 2021</div>
             </div>
         </div>
 
@@ -403,7 +432,7 @@
                     <div class="degree-details">Mention Cum Laude (Top 10% of the class)</div>
                     <div class="location">Paris, France</div>
                 </div>
-                <div class="experience-date">Dec 2021</div>
+                <div class="experience-date">December 2021</div>
             </div>
         </div>
     </section>
@@ -427,7 +456,7 @@
                     <li>Led development of CAPA-scripts, a malware analysis automation tool that identifies malicious capabilities of scripts written in C#/.NET and Python.</li>
                 </ul>
             </div>
-            <div class="experience-date">May 2022 - Aug 2022</div>
+            <div class="experience-date">May 2022 - August 2022</div>
         </div>
 
         <div class="experience-item">
@@ -443,7 +472,7 @@
                     <li>Created a Python geospatial visualization tool for the Covid-19 vaccine Phase 3 trial sites based on datasets extracted from the US Census, enabling Moderna to target at-risk groups and improve trial enrollment.</li>
                 </ul>
             </div>
-            <div class="experience-date">May 2020 - Aug 2020</div>
+            <div class="experience-date">May 2020 - August 2020</div>
         </div>
     </section>
 
@@ -494,7 +523,7 @@
     </section>
 
     <script>
-        lucide.createIcons();
+      lucide.createIcons();
     </script>
 </body>
 </html>
