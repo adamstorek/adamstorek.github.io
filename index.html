@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Štorek - Academic Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Load the core Lucide library first -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <!-- Load specific icons we need -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide-static.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            max-width: 56rem;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            color: #1a1a1a;
+        }
+
+        .header {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .profile-img {
+            width: 15rem;
+            height: 15rem;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+
+        .header-content h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            font-size: 1.125rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .contact {
+            margin-top: 1rem;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            stroke-width: 2;
+        }
+
+        .contact .icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .publication {
+            background: #f9fafb;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .conference {
+            color: #4b5563;
+            font-weight: 500;
+        }
+
+        .publication p {
+            margin-bottom: 0.5rem;
+        }
+
+        .author-name {
+            font-weight: 500;
+        }
+
+        .awards li {
+            margin-bottom: 0.5rem;
+            color: #374151;
+            list-style: none;
+        }
+
+        .education div {
+            margin-bottom: 1rem;
+        }
+
+        .education h3 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .education p {
+            color: #4b5563;
+            margin-bottom: 0.25rem;
+        }
+
+        .skills p {
+            margin-bottom: 0.5rem;
+        }
+
+        .skills strong {
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+            }
+
+            .profile-img {
+                width: 12rem;
+                height: 12rem;
+            }
+        }
+
+        .education-section h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .institution-header {
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+            color: #111827;
+        }
+
+        .education-item {
+            display: grid;
+            grid-template-columns: 60px 1fr minmax(120px, auto);
+            gap: 1rem;
+            margin-bottom: 1rem;
+            align-items: start;
+        }
+
+        .logo-container {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+        }
+
+        .degree-content {
+            margin-top: 0.15rem;
+        }
+
+        .degree-name {
+            font-weight: 500;
+            color: #111827;
+        }
+
+        .degree-details {
+            color: #4b5563;
+            margin-top: 0.25rem;
+            font-size: 0.95rem;
+        }
+
+        .location {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .education-content {
+            flex: 1;
+        }
+
+        .education-date {
+            color: #4b5563;
+            margin-left: 2rem;
+            text-align: right;
+            min-width: 120px;
+        }
+
+        .institution {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .institution h3 {
+            font-weight: 600;
+        }
+
+        .institution-location {
+            color: #4b5563;
+            text-align: right;
+        }
+
+        .degree {
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-item, .education-block {
+            display: grid;
+            grid-template-columns: 60px 1fr minmax(120px, auto); /* Ensure date column is at least 120px */
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: start;
+        }
+
+        .logo-container {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+        }
+
+        .experience-content, .education-content {
+            flex: 1;
+        }
+
+        .company-name, .institution-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .role {
+            color: #4b5563;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-date, .education-date {
+            color: #4b5563;
+            text-align: right;
+            font-size: 0.9rem;
+        }
+
+        .location {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievements {
+            margin-top: 0.5rem;
+        }
+
+        .achievements li {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+            color: #374151;
+        }
+
+        /* Update education section to match new grid layout */
+        .education .logo-container {
+            width: 60px;
+            height: 60px;
+        }
+
+        .degree-info {
+            margin-bottom: 0.25rem;
+            color: #4b5563;
+        }
+
+        .awards-list {
+            list-style: none;
+            padding-left: 1.25rem;
+        }
+
+        .awards-list li {
+            position: relative;
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+            color: #374151;
+        }
+
+        .awards-list li::before {
+            content: "•";
+            position: absolute;
+            left: -1.25rem;
+            color: #4b5563;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="assets/img/profile.jpg" alt="Adam Štorek" class="profile-img">
+        <div class="header-content">
+            <h1>Adam Štorek</h1>
+            <p class="title">PhD Student in Computer Science</p>
+            <p>
+            My research interests lie at the intersection of software security, program analysis, and natural
+            language processing. My recent work focuses on adversarial attacks against coding assistants and
+            model alignment for secure code generation.
+            </p>
+            <p class="contact">
+                <i data-lucide="mail" class="icon"></i>
+                <a href="mailto:astorek@cs.columbia.edu">astorek@cs.columbia.edu</a>
+            </p>
+        </div>
+    </div>
+
+    <section class="education-section">
+        <h2>
+            <i data-lucide="book" class="icon"></i>
+            Education
+        </h2>
+
+        <div>
+            <h3 class="institution-header">Columbia University</h3>
+            
+            <div class="education-item">
+                <div class="logo-container">
+                    <img src="assets/img/columbia.jpg" alt="Columbia University logo">
+                </div>
+                <div class="degree-content">
+                    <div class="degree-name">PhD in Computer Science</div>
+                    <div class="degree-details">Advised by Professor Suman Jana</div>
+                    <div class="location">New York, NY</div>
+                </div>
+                <div class="experience-date">Expected Dec 2027</div>
+            </div>
+
+            <div class="education-item">
+                <div class="logo-container">
+                    <img src="assets/img/columbia.jpg" alt="Columbia University logo">
+                </div>
+                <div class="degree-content">
+                    <div class="degree-name">MS in Computer Science</div>
+                    <div class="degree-details">Security track</div>
+                    <div class="location">New York, NY</div>
+                </div>
+                <div class="experience-date">Dec 2022</div>
+            </div>
+
+            <div class="education-item">
+                <div class="logo-container">
+                    <img src="assets/img/columbia.jpg" alt="Columbia University logo">
+                </div>
+                <div class="degree-content">
+                    <div class="degree-name">BA in Computer Science</div>
+                    <div class="degree-details">Intelligent Systems track, Magna Cum Laude, Phi Beta Kappa</div>
+                    <div class="location">New York, NY</div>
+                </div>
+                <div class="experience-date">Dec 2021</div>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="institution-header">Sciences Po</h3>
+            <div class="education-item">
+                <div class="logo-container">
+                    <img src="assets/img/sciencespo.jpg" alt="Sciences Po logo">
+                </div>
+                <div class="degree-content">
+                    <div class="degree-name">BA in Economics and Sociology</div>
+                    <div class="degree-details">Mention Cum Laude (Top 10% of the class)</div>
+                    <div class="location">Paris, France</div>
+                </div>
+                <div class="experience-date">Dec 2021</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>
+            <i data-lucide="briefcase" class="icon"></i>
+            Professional Experience
+        </h2>
+
+        <div class="experience-item">
+            <div class="logo-container">
+                <img src="assets/img/google.jpg" alt="Google logo">
+            </div>
+            <div class="experience-content">
+                <div class="company-name">Google</div>
+                <div class="role">Intern, Reverse Engineering & Malware Analysis at Mandiant FLARE</div>
+                <div class="location">New York, NY</div>
+                <ul class="achievements">
+                    <li>Reverse-engineered cutting-edge C/C++ and PowerShell malware to support Mandiant's incident responders.</li>
+                    <li>Led development of CAPA-scripts, a malware analysis automation tool that identifies malicious capabilities of scripts written in C#/.NET and Python.</li>
+                </ul>
+            </div>
+            <div class="experience-date">May 2022 - Aug 2022</div>
+        </div>
+
+        <div class="experience-item">
+            <div class="logo-container">
+                <img src="assets/img/moderna.jpg" alt="Moderna logo">
+            </div>
+            <div class="experience-content">
+                <div class="company-name">Moderna</div>
+                <div class="role">Data Science & AI Intern</div>
+                <div class="location">Cambridge, MA</div>
+                <ul class="achievements">
+                    <li>Developed a Bayesian-network model for clinical trial enrollment and completion, doubling the predictive accuracy compared to the previous model based on the relative WAIC scores and LOOCV.</li>
+                    <li>Created a Python geospatial visualization tool for the Covid-19 vaccine Phase 3 trial sites based on datasets extracted from the US Census, enabling Moderna to target at-risk groups and improve trial enrollment.</li>
+                </ul>
+            </div>
+            <div class="experience-date">May 2020 - Aug 2020</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>
+            <i data-lucide="file-text" class="icon"></i>
+            Publications
+        </h2>
+        <div class="publication">
+            <p>
+                <span class="conference">CCS 2024</span> · FOX: Coverage-guided Fuzzing as Online Stochastic Control
+            </p>
+            <p>
+                Dongdong She*, <span class="author-name">Adam Storek*</span>, Yuchong Xie, Seoyoung Kweon, Prashast Srivastava, and Suman Jana
+            </p>
+        </div>
+        <div class="publication">
+            <p>
+                <span class="conference">ACL 2023</span> · Unsupervised Selective Rationalization with Noise Injection
+            </p>
+            <p>
+                <span class="author-name">Adam Storek</span>, Melanie Subbiah, and Kathleen McKeown
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>
+            <i data-lucide="award" class="icon"></i>
+            Awards
+        </h2>
+        <ul class="awards-list">
+            <li>Amazon Trusted AI Challenge Sponsorship (2024-2025)</li>
+            <li>CCS Travel Grant (2024)</li>
+            <li>Black Hat Student Scholarship (2023)</li>
+            <li>Vidda Foundation Merit Scholarship (2021-2022)</li>
+            <li>William Strong Merit Scholarship (2020-2021)</li>
+        </ul>
+    </section>
+
+    <section class="skills">
+        <h2>
+            <i data-lucide="code" class="icon"></i>
+            Technical Skills
+        </h2>
+        <p><strong>Languages:</strong> Python, MATLAB, C/C++, Java, Go, x86, x64</p>
+        <p><strong>Skills:</strong> Cloud Compute (AWS, GCP, Azure), Linux, PyTorch, Pyro, transformers, Ida Pro, Ghidra, LLVM</p>
+    </section>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
