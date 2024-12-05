@@ -116,14 +116,6 @@
             color: #111827;
         }
 
-        .education-item {
-            display: grid;
-            grid-template-columns: 60px 1fr minmax(120px, auto);
-            gap: 1rem;
-            margin-bottom: 1rem;
-            align-items: start;
-        }
-
         .logo-container {
             width: 60px;
             height: 60px;
@@ -136,44 +128,25 @@
             padding: 4px;
         }
 
-        .degree-content {
-            margin-top: 0.15rem;
-        }
-
-        .degree-name {
-            font-weight: 500;
-            color: #111827;
-        }
-
-        .degree-details {
-            color: #4b5563;
-            margin-top: 0.25rem;
-            font-size: 0.95rem;
-        }
-
-        .degree {
-            margin-bottom: 0.25rem;
-        }
-
-        .experience-item, .education-block {
-            display: grid;
-            grid-template-columns: 60px 1fr minmax(120px, auto); /* Ensure date column is at least 120px */
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            align-items: start;
+        .experience-item, .education-item {
+            display: flex;
+            gap: 16px;
+            max-width: 1000px;
+            padding: 20px 0;
         }
 
         .experience-content, .education-content {
             flex: 1;
+            min-width: 0;
         }
 
-        .company-name, .institution-name {
+        .company-name, .degree-name {
             font-weight: 600;
             font-size: 1.1rem;
             margin-bottom: 0.25rem;
         }
 
-        .role {
+        .role, .degree-details {
             color: #4b5563;
             font-weight: 500;
             margin-bottom: 0.5rem;
@@ -183,6 +156,9 @@
             color: #4b5563;
             text-align: right;
             font-size: 0.9rem;
+            flex-shrink: 0;
+            margin-left: 16px;
+            white-space: nowrap;
         }
 
         .location {
@@ -238,6 +214,18 @@
             width: 1.2em;
             height: 1.2em;
         }
+
+        .header-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4px;
+        }
+
+        .company-info, .degree-info {
+            flex: 1;
+            min-width: 0;
+        }
     </style>
 </head>
 <body>
@@ -280,36 +268,48 @@
                 <div class="logo-container">
                     <img src="assets/img/columbia.jpg" alt="Columbia University logo">
                 </div>
-                <div class="degree-content">
-                    <div class="degree-name">PhD in Computer Science</div>
-                    <div class="degree-details">Advised by Professor Suman Jana</div>
-                    <div class="location">New York, NY</div>
+                <div class="education-content">
+                    <div class="header-section">
+                        <div class="degree-info">
+                            <div class="degree-name">PhD in Computer Science</div>
+                            <div class="degree-details">Advised by Professor Suman Jana</div>
+                            <div class="location">New York, NY</div>
+                        </div>
+                        <div class="experience-date">Expected December 2027</div>
+                    </div>
                 </div>
-                <div class="experience-date">Expected December 2027</div>
             </div>
 
             <div class="education-item">
                 <div class="logo-container">
                     <img src="assets/img/columbia.jpg" alt="Columbia University logo">
                 </div>
-                <div class="degree-content">
-                    <div class="degree-name">MS in Computer Science</div>
-                    <div class="degree-details">Security track</div>
-                    <div class="location">New York, NY</div>
+                <div class="education-content">
+                    <div class="header-section">
+                        <div class="degree-info">
+                            <div class="degree-name">MS in Computer Science</div>
+                            <div class="degree-details">Security track</div>
+                            <div class="location">New York, NY</div>
+                        </div>
+                        <div class="experience-date">December 2022</div>
+                    </div>
                 </div>
-                <div class="experience-date">December 2022</div>
             </div>
 
             <div class="education-item">
                 <div class="logo-container">
                     <img src="assets/img/columbia.jpg" alt="Columbia University logo">
                 </div>
-                <div class="degree-content">
-                    <div class="degree-name">BA in Computer Science</div>
-                    <div class="degree-details">Intelligent Systems track, Magna Cum Laude, Phi Beta Kappa</div>
-                    <div class="location">New York, NY</div>
+                <div class="education-content">
+                    <div class="header-section">
+                        <div class="degree-info">
+                            <div class="degree-name">BA in Computer Science</div>
+                            <div class="degree-details">Intelligent Systems track, Magna Cum Laude, Phi Beta Kappa</div>
+                            <div class="location">New York, NY</div>
+                        </div>
+                        <div class="experience-date">December 2021</div>
+                    </div>
                 </div>
-                <div class="experience-date">December 2021</div>
             </div>
         </div>
 
@@ -319,12 +319,16 @@
                 <div class="logo-container">
                     <img src="assets/img/sciencespo.jpg" alt="Sciences Po logo">
                 </div>
-                <div class="degree-content">
-                    <div class="degree-name">BA in Economics and Sociology</div>
-                    <div class="degree-details">Mention Cum Laude (Top 10% of the class)</div>
-                    <div class="location">Paris, France</div>
+                <div class="education-content">
+                    <div class="header-section">
+                        <div class="degree-info">
+                            <div class="degree-name">BA in Economics and Sociology</div>
+                            <div class="degree-details">Mention Cum Laude (Top 10% of the class)</div>
+                            <div class="location">Paris, France</div>
+                        </div>
+                        <div class="experience-date">December 2021</div>
+                    </div> 
                 </div>
-                <div class="experience-date">December 2021</div>
             </div>
         </div>
     </section>
@@ -340,15 +344,19 @@
                 <img src="assets/img/google.jpg" alt="Google logo">
             </div>
             <div class="experience-content">
-                <div class="company-name">Google</div>
-                <div class="role">Intern, Reverse Engineering & Malware Analysis at Mandiant FLARE</div>
-                <div class="location">New York, NY</div>
+                <div class="header-section">
+                    <div class="company-info">
+                        <div class="company-name">Google</div>
+                        <div class="role">Intern, Reverse Engineering & Malware Analysis at Mandiant FLARE</div>
+                        <div class="location">New York, NY</div>
+                    </div>
+                    <div class="experience-date">May 2022 - August 2022</div>
+                </div>
                 <ul class="achievements">
                     <li>Reverse-engineered cutting-edge C/C++ and PowerShell malware to support Mandiant's incident responders.</li>
                     <li>Led development of CAPA-scripts, a malware analysis automation tool that identifies malicious capabilities of scripts written in C#/.NET and Python.</li>
                 </ul>
             </div>
-            <div class="experience-date">May 2022 - August 2022</div>
         </div>
 
         <div class="experience-item">
@@ -356,15 +364,19 @@
                 <img src="assets/img/moderna.jpg" alt="Moderna logo">
             </div>
             <div class="experience-content">
-                <div class="company-name">Moderna</div>
-                <div class="role">Data Science & AI Intern</div>
-                <div class="location">Cambridge, MA</div>
+                <div class="header-section">
+                    <div class="company-info">
+                        <div class="company-name">Moderna</div>
+                        <div class="role">Data Science & AI Intern</div>
+                        <div class="location">Cambridge, MA</div>
+                    </div>
+                    <div class="experience-date">May 2020 - August 2020</div>
+                </div>
                 <ul class="achievements">
                     <li>Developed a Bayesian-network model for clinical trial enrollment and completion, doubling the predictive accuracy compared to the previous model based on the relative WAIC scores and LOOCV.</li>
                     <li>Created a Python geospatial visualization tool for the Covid-19 vaccine Phase 3 trial sites based on datasets extracted from the US Census, enabling Moderna to target at-risk groups and improve trial enrollment.</li>
                 </ul>
             </div>
-            <div class="experience-date">May 2020 - August 2020</div>
         </div>
     </section>
 
@@ -429,21 +441,21 @@
         </h2>
         <div class="experience-item">
             <div class="logo-container">
-                <img src="assets/img/columbia.jpg" alt="Columbia University logo">
+                <img src="assets/img/google.jpg" alt="Google logo">
             </div>
             <div class="experience-content">
-                <div class="company-name">
-                    Columbia University
+                <div class="header-section">
+                    <div class="company-info">
+                        <div class="company-name">Google</div>
+                        <div class="role">Intern, Reverse Engineering & Malware Analysis at Mandiant FLARE</div>
+                        <div class="location">New York, NY</div>
+                    </div>
+                    <div class="experience-date">May 2022 - August 2022</div>
                 </div>
-                <div class="role">
-                    Head Teaching Assistant for Security I
-                </div>
-                <div class="location">
-                    New York, NY
-                </div>
-            </div>
-            <div class="experience-date">
-                Fall 2024
+                <ul>
+                    <li>Reverse-engineered cutting-edge C/C++ and PowerShell malware to support Mandiant's incident responders.</li>
+                    <li>Led development of CAPA-scripts, a malware analysis automation tool that identifies malicious capabilities of scripts written in C#/.NET and Python.</li>
+                </ul>
             </div>
         </div>
     
@@ -452,21 +464,33 @@
                 <img src="assets/img/columbia.jpg" alt="Columbia University logo">
             </div>
             <div class="experience-content">
-                <div class="company-name">
-                    Columbia University
-                </div>
-                <div class="role">
-                    Course Developer with <a href="https://www.linkedin.com/in/mikesiko" target="_blank">Mike Sikorski</a>
-                </div>
-                <div class="location">
-                    New York, NY
+                <div class="header-section">
+                    <div class="company-info">
+                        <div class="company-name">Columbia University</div>
+                        <div class="role">Course Developer with <a href="https://www.linkedin.com/in/mikesiko" target="_blank">Mike Sikorski</a></div>
+                        <div class="location">New York, NY</div>
+                    </div>
+                    <div class="experience-date">Summer 2023</div>
                 </div>
                 <ul>
                     <li>Developed hands-on labs analyzing notable malware (WannaCry, Sony/Destover) for the Malware Analysis & Reverse Engineering class curriculum taught at Columbia University and BlackHat.</li>
                 </ul>
             </div>
-            <div class="experience-date">
-                Summer 2023
+        </div>
+    
+        <div class="experience-item">
+            <div class="logo-container">
+                <img src="assets/img/columbia.jpg" alt="Columbia University logo">
+            </div>
+            <div class="experience-content">
+                <div class="header-section">
+                    <div class="company-info">
+                        <div class="company-name">Columbia University</div>
+                        <div class="role">Head Teaching Assistant for Computer Vision I</div>
+                        <div class="location">New York, NY</div>
+                    </div>
+                    <div class="experience-date">Fall 2021</div>
+                </div>
             </div>
         </div>
     
@@ -475,41 +499,17 @@
                 <img src="assets/img/columbia.jpg" alt="Columbia University logo">
             </div>
             <div class="experience-content">
-                <div class="company-name">
-                    Columbia University
-                </div>
-                <div class="role">
-                    Head Teaching Assistant for Computer Vision I
-                </div>
-                <div class="location">
-                    New York, NY
-                </div>
-            </div>
-            <div class="experience-date">
-                Fall 2021
-            </div>
-        </div>
-    
-        <div class="experience-item">
-            <div class="logo-container">
-                <img src="assets/img/columbia.jpg" alt="Columbia University logo">
-            </div>
-            <div class="experience-content">
-                <div class="company-name">
-                    Columbia University
-                </div>
-                <div class="role">
-                    Course Developer with <a href="https://www.cs.columbia.edu/~nayar/" target="_blank">Professor Shree Nayar</a>
-                </div>
-                <div class="location">
-                    New York, NY
+                <div class="header-section">
+                    <div class="company-info">
+                        <div class="company-name">Columbia University</div>
+                        <div class="role">Course Developer with <a href="https://www.cs.columbia.edu/~nayar/" target="_blank">Professor Shree Nayar</a></div>
+                        <div class="location">New York, NY</div>
+                    </div>
+                    <div class="experience-date">Summer 2021</div>
                 </div>
                 <ul>
                     <li>Developed content for the <a href="https://www.coursera.org/specializations/firstprinciplesofcomputervision" target="_blank">First Principles of Computer Vision Specialization</a> on Coursera.</li>
                 </ul>
-            </div>
-            <div class="experience-date">
-                Summer 2021
             </div>
         </div>
     </section>
