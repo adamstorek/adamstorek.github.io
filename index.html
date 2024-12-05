@@ -359,9 +359,9 @@
             </p>
 
             <div class="contact-links">
-                <a href="mailto:astorek@cs.columbia.edu">
+                <a id="email-link" href="#">
                   <i data-lucide="mail" class="icon"></i>
-                  <span>astorek@cs.columbia.edu</span>
+                <span id="email-display">Loading...</span>
                 </a>
                 <a href="https://github.com/adamstorek">
                   <i data-lucide="github" class="icon"></i>
@@ -632,7 +632,17 @@
     </section>
 
     <script>
-      lucide.createIcons();
+        lucide.createIcons();
+        function displayObfuscatedEmail() {
+            const email = String.fromCharCode(97,115,116,111,114,101,107) + 
+                String.fromCharCode(64) + 
+                String.fromCharCode(99,115,46,99,111,108,117,109,98,105,97,46,101,100,117);
+            document.getElementById('email-display').textContent = email;
+            document.getElementById('email-link').href = 'mailto:' + email;
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            displayObfuscatedEmail();
+        });
     </script>
 </body>
 </html>
