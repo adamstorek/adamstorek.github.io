@@ -244,15 +244,19 @@
             <div class="contact-links">
                 <a id="email-link" href="#">
                     ✉️
-                <span id="email-display">Loading................</span>
+                    <span id="email-display">Email</span>
+                </a>
+                <a href="https://github.com/adamstorek">
+                    📚
+                    <span>Google Scholar</span>
                 </a>
                 <a href="https://github.com/adamstorek">
                     ⚡
-                  <span>GitHub</span>
+                    <span>GitHub</span>
                 </a>
                 <a href="https://linkedin.com/in/adam-storek">
                     👔
-                  <span>LinkedIn</span>
+                    <span>LinkedIn</span>
                 </a>
             </div>
         </div>
@@ -417,6 +421,29 @@
 
     <section>
         <h2>
+            📝
+            Preprints
+        </h2>
+        <div class="publication">
+            <p>
+                Sense and Sensitivity: Examining the Influence of Semantic Recall on Long Context Code Reasoning [<a href="https://arxiv.org/abs/2505.13353" target="_blank">paper</a>]
+            </p>
+            <p>
+                 <span class="author-name">Adam Štorek</span>, Mukur Gupta, Samira Hajizadeh, Prashast Srivastava, Suman Jana
+            </p>
+        </div>
+        <div class="publication">
+            <p>
+                XOXO: Stealthy Cross-Origin Context Poisoning Attacks against AI Coding Assistants [<a href="https://arxiv.org/abs/2503.14281" target="_blank">paper</a>]
+            </p>
+            <p>
+                <span class="author-name">Adam Štorek</span>, Mukur Gupta, Noopur Bhatt, Aditya Gupta, Janie Kim, Prashast Srivastava, Suman Jana
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>
             📄
             Publications
         </h2>
@@ -425,7 +452,7 @@
                 <span class="conference">CCS 2024</span> · FOX: Coverage-guided Fuzzing as Online Stochastic Control [<a href="https://arxiv.org/abs/2406.04517" target="_blank">paper</a>] [<a href="https://github.com/FOX-Fuzz/FOX" target="_blank">code</a>]
             </p>
             <p>
-                Dongdong She*, <span class="author-name">Adam Storek*</span>, Yuchong Xie, Seoyoung Kweon, Prashast Srivastava, and Suman Jana
+                Dongdong She*, <span class="author-name">Adam Storek*</span>, Yuchong Xie, Seoyoung Kweon, Prashast Srivastava, Suman Jana
             </p>
         </div>
         <div class="publication">
@@ -433,7 +460,7 @@
                 <span class="conference">ACL 2023</span> · Unsupervised Selective Rationalization with Noise Injection [<a href="https://aclanthology.org/2023.acl-long.707/" target="_blank">paper</a>] [<a href="https://github.com/adamstorek/noise_injection" target="_blank">code</a>]
             </p>
             <p>
-                <span class="author-name">Adam Storek</span>, Melanie Subbiah, and Kathleen McKeown
+                <span class="author-name">Adam Storek</span>, Melanie Subbiah, Kathleen McKeown
             </p>
         </div>
     </section>
@@ -567,7 +594,6 @@
             const email = String.fromCharCode(97,115,116,111,114,101,107) + 
                 String.fromCharCode(64) + 
                 String.fromCharCode(99,115,46,99,111,108,117,109,98,105,97,46,101,100,117);
-            document.getElementById('email-display').textContent = email;
             document.getElementById('email-link').href = 'mailto:' + email;
         }
         document.addEventListener('DOMContentLoaded', function() {
